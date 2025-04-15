@@ -10,7 +10,7 @@ mod StoryContract {
     use core::array::ArrayTrait;
     use core::traits::Into;
     use starknet::ContractAddress;
-    use starknet::get_caller_address;
+    //use starknet::get_caller_address;
     use starknet::storage::Map;
     use starknet::storage::StorageMapReadAccess;
     use starknet::storage::StorageMapWriteAccess;
@@ -103,9 +103,12 @@ mod StoryContract {
         // Calculate next story node based on current node and choice
         fn calculate_next_node(self: @ContractState, current_node: u16, choice: u8) -> u16 {
             let next_node = self.decision_tree.read((current_node, choice));
-            assert(current_node == 1_u16, 'Invalid current node');
-            assert(choice == 1_u8, 'Invalid choice');
-            assert(next_node == 10_u16, 'Invalid next node');
+            //assert(current_node == 1_u16, 'Invalid current node');
+            //assert(choice == 1_u8, 'Invalid choice');
+            //assert(next_node == 10_u16, 'Invalid next node');
+            assert(current_node == 0_u16, 'Invalid node');
+            assert(next_node == current_node, 'Error with calculating new node');
+            assert(choice != 1_u8 || choice != 2_u8, 'Invalid choice');
             next_node
         }
 
