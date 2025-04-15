@@ -1,0 +1,4 @@
+[sncast.default]
+account = "mainuser"
+accounts-file = "./account-file.json"
+url = "https://starknet-sepolia.public.blastapi.io"
