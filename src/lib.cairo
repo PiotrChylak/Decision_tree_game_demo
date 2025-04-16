@@ -106,9 +106,9 @@ mod StoryContract {
             //assert(current_node == 1_u16, 'Invalid current node');
             //assert(choice == 1_u8, 'Invalid choice');
             //assert(next_node == 10_u16, 'Invalid next node');
-            assert(current_node == 0_u16, 'Invalid node');
-            assert(next_node == current_node, 'Error with calculating new node');
-            assert(choice != 1_u8 || choice != 2_u8, 'Invalid choice');
+            assert(current_node != 0_u16, 'Invalid node');
+            assert(next_node != current_node, 'Error with calculating new node');
+            assert(choice == 1_u8 || choice == 2_u8, 'Invalid choice');
             next_node
         }
 
